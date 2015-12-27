@@ -118,7 +118,7 @@ public class ActivitiRestApiController extends ExecutionBaseResource {
 
     private static final String noteGetProcessDefinitions =
             noteController + "Загрузка каталога сервисов из Activiti #####\n\n"
-                    + "- **nID_Subject** - ID авторизированого субъекта (добавляется в запрос автоматически после аутентификации пользователя)\n"
+                    + "- **nID_Subject** - ID авторизированого субъекта (добавляется в запрос автоматически после аутентификации пользователя)\n\n\n"
                     + "Request:\n"
                     + "https://test.region.igov.org.ua/wf/service/rest/process-definitions\n\n"
                     + ".Response:\n\n"
@@ -219,9 +219,9 @@ public class ActivitiRestApiController extends ExecutionBaseResource {
                     + "HTTP Context: https://test.region.igov.org.ua/wf/service/rest/file/check_attachment_sign?nID_Task=nID_Task&nID_Attach=nID_Attach\n\n\n"
                     + "возвращает json объект описывающий ЭЦП файла-аттачмента.\n\n"
                     + "- **nID_Task** - id таски Activiti BP\n"
-                    + "- **nID_Attach** - id атачмента приложеного к таске\n"
+                    + "- **nID_Attach** - id атачмента приложеного к таске\n\n\n"
                     + "Примеры:\n\n"
-                    + "https://test.region.igov.org.ua/wf/service/rest/file/check_attachment_sign?nID_Task=7315073&nID_Attach=7315075\n"
+                    + "https://test.region.igov.org.ua/wf/service/rest/file/check_attachment_sign?nID_Task=7315073&nID_Attach=7315075\n\n"
                     + ".Ответ:\n"
                     + noteCODEJSON
                     + "{\n"
@@ -288,7 +288,7 @@ public class ActivitiRestApiController extends ExecutionBaseResource {
             + "- **description** - описание\n"
             + "- **file** - в html это имя элемента input типа file - . в HTTP заголовках - Content-Disposition: form-data; name=\"file\" ...\n"
             + "- **nID_Subject** - ID авторизированого субъекта (добавляется в запрос автоматически после аутентификации пользователя)\n\n\n"
-            + "Пример: http://test.igov.org.ua/wf/service/rest/file/upload_file_as_attachment?taskId=68&description=ololo\n\n"
+            + "Пример: http://test.igov.org.ua/wf/service/rest/file/upload_file_as_attachment?taskId=68&description=ololo\n\n\n"
             + ".Ответ без ошибок:\n"
             + noteCODEJSON
             + "{\n"
@@ -304,6 +304,7 @@ public class ActivitiRestApiController extends ExecutionBaseResource {
             + "}\n\n"
             + "nID** созданного attachment - \"id\": \"45\"\n\n"
             + noteCODE
+            + "\n"
             + ".Ответ с ошибкой:\n"
             + noteCODEJSON
             + "{\"code\":\"SYSTEM_ERR\",\"message\":\"Cannot find task with id 384\"}\n"
@@ -316,7 +317,7 @@ public class ActivitiRestApiController extends ExecutionBaseResource {
             + "- **sContentType** - MIME тип отправляемого файла (опциоанльно) (значение по умолчанию = \"text/html\")\n"
             + "- **sDescription** - описание\n"
             + "- **sFileName** - имя отправляемого файла\n\n\n"
-            + "Пример: http://localhost:8080/wf/service/rest/file/upload_content_as_attachment?nTaskId=24&sDescription=someText&sFileName=FlyWithMe.html\n"
+            + "Пример: http://localhost:8080/wf/service/rest/file/upload_content_as_attachment?nTaskId=24&sDescription=someText&sFileName=FlyWithMe.html\n\n"
             + ".Ответ без ошибок:\n"
             + noteCODEJSON
             + "{\n"
@@ -332,6 +333,7 @@ public class ActivitiRestApiController extends ExecutionBaseResource {
             + "}\n"
             + noteCODE
             + "ID созданного attachment - \"id\": \"25\"\n"
+            + "\n"
             + ".Ответ с ошибкой:\n"
             + noteCODEJSON
             + "{\"code\":\"SYSTEM_ERR\",\"message\":\"Cannot find task with id 384\"}\n"
